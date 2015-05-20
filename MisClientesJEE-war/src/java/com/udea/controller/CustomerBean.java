@@ -33,6 +33,34 @@ public class CustomerBean implements Serializable {
         return customers;
     }
     
+    //Retorna el detalle de un cliente.
+    //Utilizado para desplegar en el formulario
+    //del detalle de clientes
+    public Customer getDetails() {
+        return customer;
+    }
+    
+    //Patrón Action Handler -- Llamado
+    //Cuandop se hace click sobre el ID del cliente
+    public String showDetails(Customer customer) {
+        this.customer=customer;
+        return "DETAILS";
+    }
+    
+    //Patrón Action Handler --
+    //Llamado cuando se actualiza el cliente
+    //en la BD
+    public String update() {
+        customer=customerManager.update(customer);
+        return "SAVED";
+    }
+    
+    //Action Handler
+    //Retorna la lista de clientes
+    public String list(){
+        return "LIST";
+    }
+    
     /**
      * Creates a new instance of CustomerBean
      */
