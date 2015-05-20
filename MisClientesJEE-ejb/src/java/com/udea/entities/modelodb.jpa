@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<jpa:entity-mappings status="GENERATED" jaxb-support="false" id="_14321367376321" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm orm_2_1.xsd" xmlns:java="http://jcp.org/en/jsr/detail?id=270" xmlns:jpa="http://java.sun.com/xml/ns/persistence/orm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <jpa:entity class="Customer" compositePrimaryKeyType="NONE" jaxb-root-element="false" static-metamodel="false" visibile="true" minimized="false" id="_14321367376504">
+        <annotation>@javax.xml.bind.annotation.XmlRootElement</annotation>
+        <jpa:table name="CUSTOMER"/>
+        <jpa:named-query name="Customer.findAll">
+            <jpa:query>SELECT c FROM Customer c</jpa:query>
+        </jpa:named-query>
+        <jpa:named-query name="Customer.findByCustomerId">
+            <jpa:query>SELECT c FROM Customer c WHERE c.customerId = :customerId</jpa:query>
+        </jpa:named-query>
+        <jpa:named-query name="Customer.findByName">
+            <jpa:query>SELECT c FROM Customer c WHERE c.name = :name</jpa:query>
+        </jpa:named-query>
+        <jpa:named-query name="Customer.findByAddressline1">
+            <jpa:query>SELECT c FROM Customer c WHERE c.addressline1 = :addressline1</jpa:query>
+        </jpa:named-query>
+        <jpa:named-query name="Customer.findByAddressline2">
+            <jpa:query>SELECT c FROM Customer c WHERE c.addressline2 = :addressline2</jpa:query>
+        </jpa:named-query>
+        <jpa:named-query name="Customer.findByCity">
+            <jpa:query>SELECT c FROM Customer c WHERE c.city = :city</jpa:query>
+        </jpa:named-query>
+        <jpa:named-query name="Customer.findByState">
+            <jpa:query>SELECT c FROM Customer c WHERE c.state = :state</jpa:query>
+        </jpa:named-query>
+        <jpa:named-query name="Customer.findByPhone">
+            <jpa:query>SELECT c FROM Customer c WHERE c.phone = :phone</jpa:query>
+        </jpa:named-query>
+        <jpa:named-query name="Customer.findByFax">
+            <jpa:query>SELECT c FROM Customer c WHERE c.fax = :fax</jpa:query>
+        </jpa:named-query>
+        <jpa:named-query name="Customer.findByEmail">
+            <jpa:query>SELECT c FROM Customer c WHERE c.email = :email</jpa:query>
+        </jpa:named-query>
+        <jpa:named-query name="Customer.findByCreditLimit">
+            <jpa:query>SELECT c FROM Customer c WHERE c.creditLimit = :creditLimit</jpa:query>
+        </jpa:named-query>
+        <jpa:attributes>
+            <jpa:id name="customerId" attribute-type="java.lang.Integer" visibile="true" id="_14321367376545">
+                <annotation>@javax.validation.constraints.NotNull</annotation>
+                <jpa:column name="CUSTOMER_ID"/>
+                <jpa:sequence-generator name="CUSTOMER_ID"/>
+            </jpa:id>
+            <jpa:basic name="name" attribute-type="java.lang.String" visibile="true" id="_14321367376566">
+                <annotation>@javax.validation.constraints.Size(max=30)</annotation>
+                <jpa:column name="NAME"/>
+            </jpa:basic>
+            <jpa:basic name="addressline1" attribute-type="java.lang.String" visibile="true" id="_14321367376567">
+                <annotation>@javax.validation.constraints.Size(max=30)</annotation>
+                <jpa:column name="ADDRESSLINE1"/>
+            </jpa:basic>
+            <jpa:basic name="addressline2" attribute-type="java.lang.String" visibile="true" id="_14321367376568">
+                <annotation>@javax.validation.constraints.Size(max=30)</annotation>
+                <jpa:column name="ADDRESSLINE2"/>
+            </jpa:basic>
+            <jpa:basic name="city" attribute-type="java.lang.String" visibile="true" id="_14321367376569">
+                <annotation>@javax.validation.constraints.Size(max=25)</annotation>
+                <jpa:column name="CITY"/>
+            </jpa:basic>
+            <jpa:basic name="state" attribute-type="java.lang.String" visibile="true" id="_143213673765610">
+                <annotation>@javax.validation.constraints.Size(max=2)</annotation>
+                <jpa:column name="STATE"/>
+            </jpa:basic>
+            <jpa:basic name="phone" attribute-type="java.lang.String" visibile="true" id="_143213673765611">
+                <annotation>@javax.validation.constraints.Size(max=12)</annotation>
+                <jpa:column name="PHONE"/>
+            </jpa:basic>
+            <jpa:basic name="fax" attribute-type="java.lang.String" visibile="true" id="_143213673765612">
+                <annotation>@javax.validation.constraints.Size(max=12)</annotation>
+                <jpa:column name="FAX"/>
+            </jpa:basic>
+            <jpa:basic name="email" attribute-type="java.lang.String" visibile="true" id="_143213673765613">
+                <annotation>@javax.validation.constraints.Size(max=40)</annotation>
+                <jpa:column name="EMAIL"/>
+            </jpa:basic>
+            <jpa:basic name="creditLimit" attribute-type="java.lang.Integer" visibile="true" id="_143213673765714">
+                <jpa:column name="CREDIT_LIMIT"/>
+            </jpa:basic>
+            <jpa:many-to-one name="discountCode" target-entity="DiscountCode" optional="false" primaryKey="false" connected-entity-id="_143213673767417" connected-attribute-id="_143213673767520" visibile="true" id="_143213673765715"/>
+            <jpa:many-to-one name="zip" target-entity="MicroMarket" optional="false" primaryKey="false" connected-entity-id="_143213673768421" connected-attribute-id="_143213673768426" visibile="true" id="_143213673765816"/>
+        </jpa:attributes>
+    </jpa:entity>
+    <jpa:entity class="DiscountCode" compositePrimaryKeyType="NONE" jaxb-root-element="false" static-metamodel="false" visibile="true" minimized="false" id="_143213673767417">
+        <annotation>@javax.xml.bind.annotation.XmlRootElement</annotation>
+        <jpa:table name="DISCOUNT_CODE"/>
+        <jpa:named-query name="DiscountCode.findAll">
+            <jpa:query>SELECT d FROM DiscountCode d</jpa:query>
+        </jpa:named-query>
+        <jpa:named-query name="DiscountCode.findByDiscountCode">
+            <jpa:query>SELECT d FROM DiscountCode d WHERE d.discountCode = :discountCode</jpa:query>
+        </jpa:named-query>
+        <jpa:named-query name="DiscountCode.findByRate">
+            <jpa:query>SELECT d FROM DiscountCode d WHERE d.rate = :rate</jpa:query>
+        </jpa:named-query>
+        <jpa:attributes>
+            <jpa:id name="discountCode" attribute-type="java.lang.String" visibile="true" id="_143213673767418">
+                <annotation>@javax.validation.constraints.NotNull</annotation>
+                <annotation>@javax.validation.constraints.Size(min=1, max=1)</annotation>
+                <jpa:column name="DISCOUNT_CODE"/>
+                <jpa:sequence-generator name="DISCOUNT_CODE"/>
+            </jpa:id>
+            <jpa:basic name="rate" attribute-type="java.math.BigDecimal" visibile="true" id="_143213673767419">
+                <jpa:column name="RATE"/>
+            </jpa:basic>
+            <jpa:one-to-many name="customerCollection" target-entity="Customer" mapped-by="discountCode" collection-type="java.util.Collection" connected-entity-id="_14321367376504" connected-attribute-id="_143213673765715" visibile="true" id="_143213673767520">
+                <jpa:cascade>
+                    <jpa:cascade-all/>
+                </jpa:cascade>
+            </jpa:one-to-many>
+        </jpa:attributes>
+    </jpa:entity>
+    <jpa:entity class="MicroMarket" compositePrimaryKeyType="NONE" jaxb-root-element="false" static-metamodel="false" visibile="true" minimized="false" id="_143213673768421">
+        <annotation>@javax.xml.bind.annotation.XmlRootElement</annotation>
+        <jpa:table name="MICRO_MARKET"/>
+        <jpa:named-query name="MicroMarket.findAll">
+            <jpa:query>SELECT m FROM MicroMarket m</jpa:query>
+        </jpa:named-query>
+        <jpa:named-query name="MicroMarket.findByZipCode">
+            <jpa:query>SELECT m FROM MicroMarket m WHERE m.zipCode = :zipCode</jpa:query>
+        </jpa:named-query>
+        <jpa:named-query name="MicroMarket.findByRadius">
+            <jpa:query>SELECT m FROM MicroMarket m WHERE m.radius = :radius</jpa:query>
+        </jpa:named-query>
+        <jpa:named-query name="MicroMarket.findByAreaLength">
+            <jpa:query>SELECT m FROM MicroMarket m WHERE m.areaLength = :areaLength</jpa:query>
+        </jpa:named-query>
+        <jpa:named-query name="MicroMarket.findByAreaWidth">
+            <jpa:query>SELECT m FROM MicroMarket m WHERE m.areaWidth = :areaWidth</jpa:query>
+        </jpa:named-query>
+        <jpa:attributes>
+            <jpa:id name="zipCode" attribute-type="java.lang.String" visibile="true" id="_143213673768422">
+                <annotation>@javax.validation.constraints.NotNull</annotation>
+                <annotation>@javax.validation.constraints.Size(min=1, max=10)</annotation>
+                <jpa:column name="ZIP_CODE"/>
+                <jpa:sequence-generator name="ZIP_CODE"/>
+            </jpa:id>
+            <jpa:basic name="radius" attribute-type="java.lang.Double" visibile="true" id="_143213673768423">
+                <jpa:column name="RADIUS"/>
+            </jpa:basic>
+            <jpa:basic name="areaLength" attribute-type="java.lang.Double" visibile="true" id="_143213673768424">
+                <jpa:column name="AREA_LENGTH"/>
+            </jpa:basic>
+            <jpa:basic name="areaWidth" attribute-type="java.lang.Double" visibile="true" id="_143213673768425">
+                <jpa:column name="AREA_WIDTH"/>
+            </jpa:basic>
+            <jpa:one-to-many name="customerCollection" target-entity="Customer" mapped-by="zip" collection-type="java.util.Collection" connected-entity-id="_14321367376504" connected-attribute-id="_143213673765816" visibile="true" id="_143213673768426">
+                <jpa:cascade>
+                    <jpa:cascade-all/>
+                </jpa:cascade>
+            </jpa:one-to-many>
+        </jpa:attributes>
+    </jpa:entity>
+    <jpa:diagram id="_14321367376332">
+        <plane elementRef="_14321367376321" id="_14321367376343_p"/>
+    </jpa:diagram>
+</jpa:entity-mappings>
