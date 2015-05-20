@@ -28,7 +28,7 @@ public class CustomerBean implements Serializable {
     //Retorna la lista de clientes para
     //desplegar en la Tabla
     public List<Customer> getCustomer() {
-        if(customers==null && customers.isEmpty())
+        if(customers==null || customers.isEmpty())
             refresh(); //refresca la Lista
         return customers;
     }
@@ -68,7 +68,7 @@ public class CustomerBean implements Serializable {
     }
 
     private void refresh() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        customers=customerManager.getAllCustomers();
     }
     
 }
